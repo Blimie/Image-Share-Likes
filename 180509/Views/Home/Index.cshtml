@@ -1,0 +1,18 @@
+﻿@using _180509.Data
+@model IEnumerable<Image>
+
+<table class="table table-bordered table-striped table-hover" style="margin-top: 60px">
+    <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Like Count</th>
+    </tr>
+    @foreach (Image i in Model)
+    {
+        <tr>
+            <td><a href="/home/viewimage?imageid=@i.Id"><img src="/UploadedImages/@i.FileName" style="width: 120px; cursor:zoom-in" /></a></td>
+            <td><a href="/home/viewimage?imageid=@i.Id">@i.Title</a></td>
+            <td>@i.LikeCount</td>
+        </tr>
+    }
+</table>

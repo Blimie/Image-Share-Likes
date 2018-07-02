@@ -1,0 +1,17 @@
+﻿@using _180509.Data
+@using _180509.Models
+@model ViewImageViewModel
+
+<div class="row col-md-6 col-lg-offset-3" >
+    <h3>Likes: <span id="like-count">@Model.Image.LikeCount</span></h3>  
+    <button  @(Model.HasPermissionToLike ? "" : "disabled") class="btn btn-info btn-lg" id="like" data-image-id="@Model.Image.Id"><span class="glyphicon glyphicon-thumbs-up"></span>  Like   </button>
+    <br />  <br />
+    <img src="/UploadedImages/@Model.Image.FileName" style="width: 800px;" />
+</div>
+
+
+
+@section scripts
+{
+    <script src="/Scripts/viewimage.js"></script>
+}
